@@ -1,0 +1,67 @@
+@media (min-width: 992px) {
+	.nav {
+		.hamburger {
+			display: none;
+		}
+		// &-mobile {
+		// 	display: none;
+		// }
+		&-desktop {
+			display: block;
+		}
+		&__items {
+			position: fixed;
+			top: 0;
+			right: 0;
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: start;
+			margin-top: 0;
+			width: 100%;
+			height: 6em;
+			background-color: rgba(0, 0, 0, 0.7);
+			border-bottom: 1px solid colors.$maroon;
+			z-index: 800;
+		}
+		&__item {
+			position: relative;
+			transition: color 0.3s;
+			&::after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+
+				content: '';
+				border: 1px solid colors.$maroon;
+				opacity: 0;
+			}
+		}
+		&__item:hover {
+			color: colors.$maroon;
+		}
+		&__item:hover::after {
+			animation: nav-hoover 1s;
+		}
+	}
+
+	.header {
+		&__logo {
+			position: fixed;
+			top: 5px;
+			left: 50px;
+			width: 9em;
+		}
+		&__img {
+			background-image: url('../img/earth2-big.jpg');
+		}
+	}
+}
+@media (min-width: 1200px) {
+	.nav {
+		&__item {
+			margin-right: 5%;
+		}
+	}
+}
